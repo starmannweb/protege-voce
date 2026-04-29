@@ -51,13 +51,22 @@ body {
   align-items: center;
 }
 
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  width: 142px;
+  text-decoration: none;
+}
+
 .logo-img {
   width: 190px;
-  max-width: 46vw;
+  max-width: none;
   height: 58px;
   object-fit: contain;
   object-position: center;
   display: block;
+  transform: translateX(-42px);
 }
 
 /* Main Layout */
