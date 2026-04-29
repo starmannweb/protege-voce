@@ -7,7 +7,7 @@ const STORAGE_KEY = 'bolsa-checkout';
 // Plans Catalog
 const PLANS_CATALOG = {
   unico: {
-    id: 'unico', name: 'Bolsa Protegida + Cartão Protegido', price: 5.90, totalPrice: 70.80,
+    id: 'unico', name: 'Bolsa Protegida', price: 5.90, totalPrice: 70.80,
     benefits: ['Até R$ 5.000 para roubo ou furto qualificado de bens', 'Cartões protegidos contra perda, roubo e furto', 'Cobertura de R$ 2.000 para saques e compras sob coação', 'Sem carência', 'Sem franquia para cartões e cobertura sob coação']
   }
 };
@@ -330,7 +330,7 @@ dom('cep').addEventListener('input', async (e) => {
 dom('btn-next-1').addEventListener('click', () => {
   let valid = true;
   if (!validateCPF(state.personal.cpf)) { setError('cpf', 'CPF inválido. Confira os números e tente novamente.'); valid = false; } else setError('cpf', '');
-  if (!validateEmail(state.personal.email)) { setError('email', 'Digite um e-mail válido.'); valid = false; } else setError('email', '');
+  if (!validateEmail(state.personal.email)) { setError('email', 'Digite um email válido.'); valid = false; } else setError('email', '');
   if (!validateFullName(state.personal.nomeCompleto)) { setError('nomeCompleto', 'Digite seu nome e sobrenome.'); valid = false; } else setError('nomeCompleto', '');
   if (!validateCelular(state.personal.celular)) { setError('celular', 'Número inválido. Ex: (11) 91234-5678'); valid = false; } else setError('celular', '');
 
@@ -392,7 +392,7 @@ dom('btn-submit').addEventListener('click', async () => {
     await new Promise(r => setTimeout(r, 2000));
     const success = Math.random() > 0.3;
     if (success) {
-      state.proposalNumber = 'BPC-' + Math.floor(100000 + Math.random() * 900000);
+      state.proposalNumber = 'BPC ' + Math.floor(100000 + Math.random() * 900000);
       saveState();
 
       window.location.href = 'obrigado.html';

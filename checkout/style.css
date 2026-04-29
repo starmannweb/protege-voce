@@ -52,11 +52,11 @@ body {
 }
 
 .logo-img {
-  width: 180px;
+  width: 190px;
   max-width: 46vw;
-  height: 52px;
+  height: 64px;
   object-fit: cover;
-  object-position: center;
+  object-position: center 52%;
   display: block;
 }
 

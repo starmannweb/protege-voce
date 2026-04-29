@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bolsa Protegida - Obrigado</title>
+    <title>Bolsa Protegida Obrigado</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -192,13 +192,13 @@
                 </div>
 
                 <h1 class="message-title">Parabéns, sua proteção está ativa!</h1>
-                <p class="message-subtitle">Sua contratação do Bolsa Protegida + Cartão Protegido foi registrada.</p>
-                <p class="proposal-num">Proposta <span id="lbl-proposal">BPC-000000</span> criada.</p>
+                <p class="message-subtitle">Sua contratação do Bolsa Protegida foi registrada.</p>
+                <p class="proposal-num">Proposta <span id="lbl-proposal">BPC 000000</span> criada.</p>
 
                 <div class="summary-box">
                     <div class="summary-row">
                         <span class="summary-label">Plano</span>
-                        <span class="summary-value" id="lbl-plan">—</span>
+                        <span class="summary-value" id="lbl-plan">Bolsa Protegida</span>
                     </div>
                     <div class="summary-row">
                         <span class="summary-label">Valor mensal</span>
@@ -206,7 +206,7 @@
                     </div>
                     <div class="summary-row">
                         <span class="summary-label">Forma de pagamento</span>
-                        <span class="summary-value" id="lbl-installments">—</span>
+                        <span class="summary-value" id="lbl-installments">1x de R$ 5,90 ao mês</span>
                     </div>
                 </div>
 
@@ -229,7 +229,7 @@
 
         <footer class="app-footer">
             <div class="footer-content">
-                <p>&copy; 2026 Bolsa Protegida + Cartão Protegido. Todos os direitos reservados.</p>
+                <p>&copy; 2026 Bolsa Protegida. Todos os direitos reservados.</p>
             </div>
         </footer>
     </div>
@@ -242,7 +242,7 @@
             try {
                 const state = JSON.parse(saved);
                 if (state.plan) {
-                    document.getElementById('lbl-plan').innerText = state.plan.name;
+                    document.getElementById('lbl-plan').innerText = 'Bolsa Protegida';
                     document.getElementById('lbl-price').innerText = `R$ ${state.plan.price.toFixed(2).replace('.', ',')}`;
 
                     let val = state.plan.price.toFixed(2).replace('.', ',');
@@ -251,12 +251,13 @@
                     document.getElementById('lbl-installments').innerText = parcelasLabel;
                 }
 
-                let proposta = state.proposalNumber || ('BPC-' + Math.floor(100000 + Math.random() * 900000));
+                let proposta = state.proposalNumber || ('BPC ' + Math.floor(100000 + Math.random() * 900000));
+                proposta = String(proposta).replace(/^BPC\W*/, 'BPC ');
                 document.getElementById('lbl-proposal').innerText = proposta;
 
             } catch (e) { }
         } else {
-            document.getElementById('lbl-plan').innerText = 'Bolsa Protegida + Cartão Protegido';
+            document.getElementById('lbl-plan').innerText = 'Bolsa Protegida';
             document.getElementById('lbl-price').innerText = 'R$ 5,90';
             document.getElementById('lbl-installments').innerText = '1x de R$ 5,90 ao mês';
         }
