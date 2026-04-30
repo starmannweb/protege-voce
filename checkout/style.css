@@ -103,6 +103,10 @@ body {
   margin-top: 1.5rem;
 }
 
+.layout-sidebar {
+  display: none;
+}
+
 @media(min-width: 1024px) {
   .layout-grid {
     flex-direction: row;
@@ -114,6 +118,7 @@ body {
   }
 
   .layout-sidebar {
+    display: block;
     width: 320px;
     flex-shrink: 0;
   }
