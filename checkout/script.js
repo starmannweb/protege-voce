@@ -134,7 +134,7 @@ function renderSummaryHtml(plan, isMobile) {
       </div>
       <div class="plan-price-section">
         <p class="plan-price-label">Valor mensal</p>
-        <p class="plan-price-value">R$ ${plan.price.toFixed(2).replace('.', ',')}<span class="plan-price-month"> por mês</span></p>
+        <p class="plan-price-value">R$ ${plan.price.toFixed(2).replace('.', ',')}<span class="plan-price-month"> mensal recorrente</span></p>
       </div>
       <div class="plan-benefits">
         <p class="benefits-title">Incluso no plano:</p>
@@ -286,7 +286,7 @@ function loadFields() {
   if (state.plan) {
     let price = state.plan.price;
     let val = price.toFixed(2).replace('.', ',');
-    let parcHtml = `<option value="mensal">R$ ${val} por mês</option>`;
+    let parcHtml = `<option value="mensal">R$ ${val} mensal recorrente</option>`;
     dom('parcelas').innerHTML = parcHtml;
     // There is only one payment option for this product.
     if (state.payment.parcelas !== 'mensal') {

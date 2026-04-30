@@ -206,7 +206,7 @@
                     </div>
                     <div class="summary-row">
                         <span class="summary-label">Forma de pagamento</span>
-                        <span class="summary-value" id="lbl-installments">R$ 5,90 por mês</span>
+                        <span class="summary-value" id="lbl-installments">R$ 5,90 mensal recorrente</span>
                     </div>
                 </div>
 
@@ -246,7 +246,7 @@
                     document.getElementById('lbl-price').innerText = `R$ ${state.plan.price.toFixed(2).replace('.', ',')}`;
 
                     let val = state.plan.price.toFixed(2).replace('.', ',');
-                    let parcelasLabel = `R$ ${val} por mês`;
+                    let parcelasLabel = `R$ ${val} mensal recorrente`;
 
                     document.getElementById('lbl-installments').innerText = parcelasLabel;
                 }
@@ -259,7 +259,7 @@
         } else {
             document.getElementById('lbl-plan').innerText = 'Bolsa Protegida';
             document.getElementById('lbl-price').innerText = 'R$ 5,90';
-            document.getElementById('lbl-installments').innerText = 'R$ 5,90 por mês';
+            document.getElementById('lbl-installments').innerText = 'R$ 5,90 mensal recorrente';
         }
     </script>
 </body>
