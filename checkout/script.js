@@ -7,7 +7,7 @@ const STORAGE_KEY = 'bolsa-checkout';
 // Plans Catalog
 const PLANS_CATALOG = {
   unico: {
-    id: 'unico', name: 'Bolsa Protegida', price: 5.90, totalPrice: 70.80,
+    id: 'unico', name: 'Bolsa Protegida', price: 5.90,
     benefits: ['Até R$ 5.000 para roubo ou furto qualificado de bens', 'Cartões protegidos contra perda, roubo e furto', 'Cobertura de R$ 2.000 para saques e compras sob coação', 'Sem carência', 'Sem franquia para cartões e cobertura sob coação']
   }
 };
@@ -134,7 +134,7 @@ function renderSummaryHtml(plan, isMobile) {
       </div>
       <div class="plan-price-section">
         <p class="plan-price-label">Valor mensal</p>
-        <p class="plan-price-value">R$ ${plan.price.toFixed(2).replace('.', ',')}<span class="plan-price-month">/mês</span></p>
+        <p class="plan-price-value">R$ ${plan.price.toFixed(2).replace('.', ',')}<span class="plan-price-month"> por mês</span></p>
       </div>
       <div class="plan-benefits">
         <p class="benefits-title">Incluso no plano:</p>
@@ -286,11 +286,11 @@ function loadFields() {
   if (state.plan) {
     let price = state.plan.price;
     let val = price.toFixed(2).replace('.', ',');
-    let parcHtml = `<option value="12">12x de R$ ${val} ao mês</option>`;
+    let parcHtml = `<option value="mensal">R$ ${val} por mês</option>`;
     dom('parcelas').innerHTML = parcHtml;
     // There is only one payment option for this product.
-    if (state.payment.parcelas !== '12') {
-      state.payment.parcelas = '12';
+    if (state.payment.parcelas !== 'mensal') {
+      state.payment.parcelas = 'mensal';
       saveState();
     }
   }
