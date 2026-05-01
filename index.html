@@ -289,7 +289,7 @@ section { padding: 100px 0; }
 .plano-tag {
   display: none;
 }
-.plano-preco { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+.plano-preco { min-height: 40px; display: flex; align-items: baseline; gap: 6px; flex-wrap: nowrap; }
 .plano-preco .label { flex-basis: 100%; font-size: 0.9rem; color: var(--texto-suave); margin-right: 0; }
 .plano-preco .parcelas { font-size: 1rem; font-weight: 800; color: var(--azul-sura); margin-right: 2px; }
 .plano-preco .moeda { font-size: 1.7rem; font-weight: 800; color: var(--texto); }
@@ -306,7 +306,7 @@ section { padding: 100px 0; }
 .planificacao-row::before {
   content: '\2713'; grid-column: 1; grid-row: 1 / span 3;
   width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center;
-  color: var(--rosa-acento); font-size: 0.95rem; font-weight: 900; line-height: 1; margin-top: 1px;
+  color: #18B957; font-size: 0.95rem; font-weight: 900; line-height: 1; margin-top: 1px;
 }
 .planificacao-row > * { grid-column: 2; }
 .planificacao-row.compact { min-height: auto; }
