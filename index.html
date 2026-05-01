@@ -256,32 +256,26 @@ section { padding: 100px 0; }
 /* ===== PLANO / TABELA ===== */
 .plano { background: linear-gradient(180deg, var(--branco) 0%, var(--creme) 100%); scroll-margin-top: 96px; }
 .plano-wrapper { max-width: 1080px; margin: 0 auto; }
-.plano-card {
-  background: var(--branco); border-radius: 32px; overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 44, 92, 0.1); border: 1px solid var(--borda);
-}
-.plano-header {
-  background: linear-gradient(135deg, var(--azul-sura), var(--azul-sura-2));
-  padding: 36px 40px; color: var(--branco); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
-}
-.plano-header h3 { color: var(--branco); font-size: 1.6rem; }
-.plano-header .badge { background: rgba(255,255,255,0.18); padding: 6px 14px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; }
 
 .planificacao-grid {
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px;
-  background: var(--azul-claro); padding: 28px;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;
 }
 .planificacao-col {
-  display: flex; flex-direction: column; min-width: 0;
+  display: flex; flex-direction: column; min-width: 0; position: relative;
   background: var(--branco); border: 1px solid rgba(0, 44, 92, 0.08);
-  border-radius: 22px; overflow: hidden; box-shadow: 0 14px 34px rgba(0, 44, 92, 0.08);
+  border-radius: 18px; overflow: hidden; box-shadow: 0 18px 44px rgba(0, 44, 92, 0.1);
+  transition: var(--transition);
 }
-.planificacao-col.destacado { border-color: rgba(250, 114, 14, 0.26); box-shadow: 0 16px 38px rgba(250, 114, 14, 0.13); }
+.planificacao-col:hover { transform: translateY(-4px); box-shadow: 0 22px 52px rgba(0, 44, 92, 0.14); }
+.planificacao-col.destacado { border-color: rgba(250, 114, 14, 0.5); box-shadow: 0 20px 52px rgba(250, 114, 14, 0.16); }
+.planificacao-col.destacado::before {
+  content: ''; position: absolute; inset: 0 0 auto; height: 7px; background: var(--rosa-acento); z-index: 3;
+}
 .planificacao-head {
-  min-height: 190px; padding: 28px; display: flex; flex-direction: column; gap: 16px;
-  background: #F3F7FB; border-bottom: 1px solid var(--borda);
+  min-height: 190px; padding: 30px 28px 28px; display: flex; flex-direction: column; gap: 16px;
+  background: var(--branco); border-bottom: 1px solid var(--borda);
 }
-.planificacao-col.destacado .planificacao-head { background: #EAF6FC; }
+.planificacao-col.destacado .planificacao-head { padding-top: 34px; }
 .planificacao-title { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .planificacao-title h4 {
   font-family: 'Manrope', sans-serif; font-size: 0.95rem; font-weight: 800; letter-spacing: 0.08em;
@@ -312,18 +306,15 @@ section { padding: 100px 0; }
 .planificacao-row strong { font-size: 1.02rem; color: var(--texto); line-height: 1.35; }
 .planificacao-row .valor { font-family: 'Fraunces', serif; font-size: 1.45rem; color: var(--azul-sura); line-height: 1; }
 .planificacao-row small { color: var(--texto-suave); font-size: 0.82rem; line-height: 1.4; }
-.planificacao-cta { margin-top: auto; padding: 24px 28px 28px; background: #F8FBFD; }
-.planificacao-col.destacado .planificacao-cta { background: #EFF8FC; }
+.planificacao-cta { margin-top: auto; padding: 24px 28px 28px; background: var(--branco); }
 .planificacao-cta .btn { width: 100%; }
 
-.plano-footer {
-  background: var(--azul-claro); padding: 30px 40px; display: grid; gap: 24px;
-}
-.plano-footer .coberturas-info { margin-top: 0; }
+.plano-notas { max-width: 960px; margin: 36px auto 0; display: grid; gap: 18px; }
+.plano-notas .coberturas-info { margin-top: 0; }
 .carencia-global {
   display: flex; align-items: center; justify-content: space-between; gap: 18px;
   background: var(--branco); border: 1px solid rgba(0, 44, 92, 0.08); border-radius: 18px;
-  padding: 18px 22px; box-shadow: var(--sombra-sm);
+  padding: 18px 22px; box-shadow: 0 14px 34px rgba(0, 44, 92, 0.08);
 }
 .carencia-global span {
   font-size: 0.78rem; font-weight: 900; color: var(--azul-sura); letter-spacing: 0.1em; text-transform: uppercase;
@@ -484,11 +475,12 @@ section { padding: 100px 0; }
   .sura-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   section { padding: 70px 0; }
-  .plano-header, .plano-footer { padding: 24px; }
-  .planificacao-grid { grid-template-columns: 1fr; padding: 22px; gap: 18px; }
+  .planificacao-grid { grid-template-columns: 1fr; gap: 18px; }
   .planificacao-head { min-height: auto; padding: 24px; }
   .planificacao-row { min-height: auto; padding: 16px 24px; }
   .planificacao-cta { padding: 22px 24px 24px; }
+  .planificacao-col.destacado .planificacao-head { padding-top: 30px; }
+  .plano-notas { margin-top: 24px; }
   .carencia-global { align-items: flex-start; flex-direction: column; }
   .coberturas-info { grid-template-columns: 1fr; }
 }
@@ -766,15 +758,6 @@ section { padding: 100px 0; }
     </div>
 
     <div class="plano-wrapper">
-      <div class="plano-card">
-        <div class="plano-header">
-          <div>
-            <h3>Bolsa Protegida</h3>
-            <span style="opacity:0.85; font-size: 0.95rem;">Cobertura completa para seus pertences e cartões</span>
-          </div>
-          <span class="badge">Plano mensal</span>
-        </div>
-
         <div class="planificacao-grid" aria-label="Planificação comercial por plano">
           <article class="planificacao-col">
             <div class="planificacao-head">
@@ -882,7 +865,7 @@ section { padding: 100px 0; }
           </article>
         </div>
 
-        <div class="plano-footer">
+        <div class="plano-notas">
           <div class="carencia-global">
             <span>Carência</span>
             <strong>Não se aplica</strong>
@@ -897,7 +880,6 @@ section { padding: 100px 0; }
             </div>
           </div>
         </div>
-      </div>
     </div>
   </div>
 </section>
