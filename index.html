@@ -268,15 +268,15 @@ section { padding: 100px 0; }
 .plano-header .badge { background: rgba(255,255,255,0.18); padding: 6px 14px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; }
 
 .planificacao-grid {
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0;
-  background: var(--branco);
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px;
+  background: var(--azul-claro); padding: 28px;
 }
 .planificacao-col {
   display: flex; flex-direction: column; min-width: 0;
-  border-right: 1px solid var(--borda);
+  background: var(--branco); border: 1px solid rgba(0, 44, 92, 0.08);
+  border-radius: 22px; overflow: hidden; box-shadow: 0 14px 34px rgba(0, 44, 92, 0.08);
 }
-.planificacao-col:last-child { border-right: none; }
-.planificacao-col.destacado { background: linear-gradient(180deg, rgba(43, 169, 224, 0.09) 0%, rgba(255,255,255,0) 34%); }
+.planificacao-col.destacado { border-color: rgba(250, 114, 14, 0.26); box-shadow: 0 16px 38px rgba(250, 114, 14, 0.13); }
 .planificacao-head {
   min-height: 190px; padding: 28px; display: flex; flex-direction: column; gap: 16px;
   background: #F3F7FB; border-bottom: 1px solid var(--borda);
@@ -312,11 +312,6 @@ section { padding: 100px 0; }
 .planificacao-row strong { font-size: 1.02rem; color: var(--texto); line-height: 1.35; }
 .planificacao-row .valor { font-family: 'Fraunces', serif; font-size: 1.45rem; color: var(--azul-sura); line-height: 1; }
 .planificacao-row small { color: var(--texto-suave); font-size: 0.82rem; line-height: 1.4; }
-.planificacao-ok {
-  width: fit-content; display: inline-flex; align-items: center; justify-content: center;
-  padding: 5px 10px; border-radius: 999px; color: #18B957; background: rgba(43, 213, 108, 0.1);
-  border: 1px solid rgba(43, 213, 108, 0.16); font-size: 0.9rem; font-weight: 900;
-}
 .planificacao-cta { margin-top: auto; padding: 24px 28px 28px; background: #F8FBFD; }
 .planificacao-col.destacado .planificacao-cta { background: #EFF8FC; }
 .planificacao-cta .btn { width: 100%; }
@@ -325,6 +320,19 @@ section { padding: 100px 0; }
   background: var(--azul-claro); padding: 30px 40px; display: grid; gap: 24px;
 }
 .plano-footer .coberturas-info { margin-top: 0; }
+.carencia-global {
+  display: flex; align-items: center; justify-content: space-between; gap: 18px;
+  background: var(--branco); border: 1px solid rgba(0, 44, 92, 0.08); border-radius: 18px;
+  padding: 18px 22px; box-shadow: var(--sombra-sm);
+}
+.carencia-global span {
+  font-size: 0.78rem; font-weight: 900; color: var(--azul-sura); letter-spacing: 0.1em; text-transform: uppercase;
+}
+.carencia-global strong {
+  display: inline-flex; align-items: center; justify-content: center; padding: 6px 12px;
+  border-radius: 999px; color: #18B957; background: rgba(43, 213, 108, 0.1);
+  border: 1px solid rgba(43, 213, 108, 0.16); font-size: 0.95rem;
+}
 
 /* ===== PARA QUEM É ===== */
 .personas { background: var(--branco); }
@@ -477,12 +485,11 @@ section { padding: 100px 0; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   section { padding: 70px 0; }
   .plano-header, .plano-footer { padding: 24px; }
-  .planificacao-grid { grid-template-columns: 1fr; }
-  .planificacao-col { border-right: none; border-bottom: 1px solid var(--borda); }
-  .planificacao-col:last-child { border-bottom: none; }
+  .planificacao-grid { grid-template-columns: 1fr; padding: 22px; gap: 18px; }
   .planificacao-head { min-height: auto; padding: 24px; }
   .planificacao-row { min-height: auto; padding: 16px 24px; }
   .planificacao-cta { padding: 22px 24px 24px; }
+  .carencia-global { align-items: flex-start; flex-direction: column; }
   .coberturas-info { grid-template-columns: 1fr; }
 }
 @media (max-width: 540px) {
@@ -785,25 +792,18 @@ section { padding: 100px 0; }
             </div>
             <div class="planificacao-body">
               <div class="planificacao-row">
-                <span class="label">Roubo ou furto qualificado de bens</span>
-                <strong class="valor">R$ 3.000,00</strong>
-              </div>
-              <div class="planificacao-row">
-                <span class="label">Perda, roubo ou furto de cartões</span>
-                <strong class="valor">R$ 3.000,00</strong>
+                <span class="label">Limite para bens e cartões</span>
+                <strong class="valor">Até R$ 3.000,00</strong>
+                <small>Cobre roubo ou furto qualificado de bens e perda, roubo ou furto de cartões.</small>
               </div>
               <div class="planificacao-row">
                 <span class="label">Saques e compras sob coação</span>
-                <strong class="valor">R$ 1.000,00</strong>
+                <strong class="valor">Até R$ 1.000,00</strong>
               </div>
               <div class="planificacao-row">
                 <span class="label">Franquia</span>
                 <strong>15% em roubo ou furto qualificado de bens</strong>
                 <small>Cartões e coação: não se aplica.</small>
-              </div>
-              <div class="planificacao-row">
-                <span class="label">Carência</span>
-                <strong class="planificacao-ok">Não se aplica</strong>
               </div>
             </div>
             <div class="planificacao-cta">
@@ -827,25 +827,18 @@ section { padding: 100px 0; }
             </div>
             <div class="planificacao-body">
               <div class="planificacao-row">
-                <span class="label">Roubo ou furto qualificado de bens</span>
-                <strong class="valor">R$ 5.000,00</strong>
-              </div>
-              <div class="planificacao-row">
-                <span class="label">Perda, roubo ou furto de cartões</span>
-                <strong class="valor">R$ 5.000,00</strong>
+                <span class="label">Limite para bens e cartões</span>
+                <strong class="valor">Até R$ 5.000,00</strong>
+                <small>Cobre roubo ou furto qualificado de bens e perda, roubo ou furto de cartões.</small>
               </div>
               <div class="planificacao-row">
                 <span class="label">Saques e compras sob coação</span>
-                <strong class="valor">R$ 2.000,00</strong>
+                <strong class="valor">Até R$ 2.000,00</strong>
               </div>
               <div class="planificacao-row">
                 <span class="label">Franquia</span>
                 <strong>15% em roubo ou furto qualificado de bens</strong>
                 <small>Cartões e coação: não se aplica.</small>
-              </div>
-              <div class="planificacao-row">
-                <span class="label">Carência</span>
-                <strong class="planificacao-ok">Não se aplica</strong>
               </div>
             </div>
             <div class="planificacao-cta">
@@ -869,25 +862,18 @@ section { padding: 100px 0; }
             </div>
             <div class="planificacao-body">
               <div class="planificacao-row">
-                <span class="label">Roubo ou furto qualificado de bens</span>
-                <strong class="valor">R$ 8.000,00</strong>
-              </div>
-              <div class="planificacao-row">
-                <span class="label">Perda, roubo ou furto de cartões</span>
-                <strong class="valor">R$ 8.000,00</strong>
+                <span class="label">Limite para bens e cartões</span>
+                <strong class="valor">Até R$ 8.000,00</strong>
+                <small>Cobre roubo ou furto qualificado de bens e perda, roubo ou furto de cartões.</small>
               </div>
               <div class="planificacao-row">
                 <span class="label">Saques e compras sob coação</span>
-                <strong class="valor">R$ 2.000,00</strong>
+                <strong class="valor">Até R$ 2.000,00</strong>
               </div>
               <div class="planificacao-row">
                 <span class="label">Franquia</span>
                 <strong>15% em roubo ou furto qualificado de bens</strong>
                 <small>Cartões e coação: não se aplica.</small>
-              </div>
-              <div class="planificacao-row">
-                <span class="label">Carência</span>
-                <strong class="planificacao-ok">Não se aplica</strong>
               </div>
             </div>
             <div class="planificacao-cta">
@@ -897,6 +883,10 @@ section { padding: 100px 0; }
         </div>
 
         <div class="plano-footer">
+          <div class="carencia-global">
+            <span>Carência</span>
+            <strong>Não se aplica</strong>
+          </div>
           <div class="coberturas-info">
             <div class="info-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
