@@ -267,9 +267,11 @@ section { padding: 100px 0; }
   transition: var(--transition);
 }
 .planificacao-col:hover { transform: translateY(-4px); box-shadow: 0 22px 52px rgba(0, 44, 92, 0.14); }
-.planificacao-col.destacado { border-color: rgba(250, 114, 14, 0.5); box-shadow: 0 20px 52px rgba(250, 114, 14, 0.16); }
+.planificacao-col.destacado { border-color: var(--rosa-acento); box-shadow: 0 20px 52px rgba(250, 114, 14, 0.16); }
 .planificacao-col.destacado::before {
-  content: ''; position: absolute; inset: 0 0 auto; height: 7px; background: var(--rosa-acento); z-index: 3;
+  content: 'MAIS ESCOLHIDO'; position: absolute; inset: 0 0 auto; height: 34px; background: var(--rosa-acento); z-index: 3;
+  display: flex; align-items: center; justify-content: center;
+  color: #06192F; font-size: 0.78rem; font-weight: 900; letter-spacing: 0.08em;
 }
 .planificacao-head {
   min-height: 190px; padding: 0; display: flex; flex-direction: column; gap: 0;
@@ -277,28 +279,25 @@ section { padding: 100px 0; }
 }
 .planificacao-title {
   display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  background: var(--azul-sura); padding: 18px 22px;
+  background: var(--branco); padding: 28px 28px 0;
 }
-.planificacao-col.destacado .planificacao-title { padding-top: 24px; }
+.planificacao-col.destacado .planificacao-title { padding-top: 56px; }
 .planificacao-title h4 {
-  font-family: 'Manrope', sans-serif; font-size: 0.95rem; font-weight: 800; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--branco);
+  font-family: 'Manrope', sans-serif; font-size: 1.15rem; font-weight: 800; letter-spacing: 0;
+  text-transform: none; color: var(--texto);
 }
 .plano-tag {
-  display: inline-flex; align-items: center; justify-content: center; padding: 5px 10px; border-radius: 999px;
-  background: rgba(255,255,255,0.16); color: var(--branco); font-size: 0.72rem; font-weight: 900;
+  display: none;
 }
-.plano-tag.accent { background: var(--rosa-acento); color: var(--branco); }
 .plano-preco { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
 .plano-preco .label { flex-basis: 100%; font-size: 0.9rem; color: var(--texto-suave); margin-right: 0; }
 .plano-preco .parcelas { font-size: 1rem; font-weight: 800; color: var(--azul-sura); margin-right: 2px; }
-.plano-preco .apenas { font-size: 1rem; font-weight: 800; color: var(--azul-sura); margin-right: 2px; }
-.plano-preco .moeda { font-size: 1.2rem; font-weight: 700; color: var(--azul-sura); }
-.plano-preco .num { font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 700; color: var(--azul-sura); line-height: 1; }
+.plano-preco .moeda { font-size: 1.7rem; font-weight: 800; color: var(--texto); }
+.plano-preco .num { font-family: 'Manrope', sans-serif; font-size: 2rem; font-weight: 800; color: var(--texto); line-height: 1; letter-spacing: 0; }
 .plano-preco .periodo { font-size: 1rem; color: var(--texto-suave); }
 .plano-preco .cafezinho { flex-basis: 100%; font-size: 0.9rem; color: var(--texto-suave); margin-top: -2px; }
-.planificacao-head .plano-preco { padding: 26px 28px 0; }
-.planificacao-sub { color: var(--texto-suave); font-size: 0.9rem; line-height: 1.45; padding: 12px 28px 26px; }
+.planificacao-head .plano-preco { padding: 18px 28px 0; }
+.planificacao-sub { color: var(--texto-suave); font-size: 0.9rem; line-height: 1.45; padding: 8px 28px 24px; }
 .planificacao-body { display: flex; flex-direction: column; flex: 1; }
 .planificacao-row {
   min-height: 86px; padding: 17px 28px; display: grid; gap: 7px; align-content: center;
@@ -474,10 +473,10 @@ section { padding: 100px 0; }
   section { padding: 70px 0; }
   .planificacao-grid { grid-template-columns: 1fr; gap: 18px; }
   .planificacao-head { min-height: auto; }
-  .planificacao-title { padding: 17px 20px; }
-  .planificacao-col.destacado .planificacao-title { padding-top: 22px; }
-  .planificacao-head .plano-preco { padding: 22px 24px 0; }
-  .planificacao-sub { padding: 10px 24px 22px; }
+  .planificacao-title { padding: 24px 24px 0; }
+  .planificacao-col.destacado .planificacao-title { padding-top: 52px; }
+  .planificacao-head .plano-preco { padding: 16px 24px 0; }
+  .planificacao-sub { padding: 8px 24px 22px; }
   .planificacao-row { min-height: auto; padding: 16px 24px; }
   .planificacao-cta { padding: 22px 24px 24px; }
   .plano-notas { margin-top: 24px; }
@@ -761,16 +760,14 @@ section { padding: 100px 0; }
           <article class="planificacao-col">
             <div class="planificacao-head">
               <div class="planificacao-title">
-                <h4>Plano 1</h4>
-                <span class="plano-tag">Essencial</span>
+                <h4>Essencial</h4>
               </div>
               <div class="plano-preco">
-                <span class="apenas">apenas</span>
                 <span class="moeda">R$</span>
                 <span class="num">3,90</span>
-                <span class="periodo">por mês</span>
+                <span class="periodo">/mês</span>
               </div>
-              <p class="planificacao-sub">Entrada objetiva para proteger pertences, cartões e eventos sob coação.</p>
+              <p class="planificacao-sub">Cobertura até R$ 3.000</p>
             </div>
             <div class="planificacao-body">
               <div class="planificacao-row">
@@ -797,19 +794,17 @@ section { padding: 100px 0; }
             </div>
           </article>
 
-          <article class="planificacao-col destacado">
+          <article class="planificacao-col">
             <div class="planificacao-head">
               <div class="planificacao-title">
-                <h4>Plano 2</h4>
-                <span class="plano-tag accent">Mais escolhido</span>
+                <h4>Conforto</h4>
               </div>
               <div class="plano-preco">
-                <span class="apenas">apenas</span>
                 <span class="moeda">R$</span>
                 <span class="num">5,90</span>
-                <span class="periodo">por mês</span>
+                <span class="periodo">/mês</span>
               </div>
-              <p class="planificacao-sub">Equilíbrio entre preço e cobertura, com limite maior para bens e cartões.</p>
+              <p class="planificacao-sub">Cobertura até R$ 5.000</p>
             </div>
             <div class="planificacao-body">
               <div class="planificacao-row">
@@ -836,19 +831,17 @@ section { padding: 100px 0; }
             </div>
           </article>
 
-          <article class="planificacao-col">
+          <article class="planificacao-col destacado">
             <div class="planificacao-head">
               <div class="planificacao-title">
-                <h4>Plano 3</h4>
-                <span class="plano-tag">Maior limite</span>
+                <h4>Premium</h4>
               </div>
               <div class="plano-preco">
-                <span class="apenas">apenas</span>
                 <span class="moeda">R$</span>
                 <span class="num">9,90</span>
-                <span class="periodo">por mês</span>
+                <span class="periodo">/mês</span>
               </div>
-              <p class="planificacao-sub">A opção com maior proteção para quem quer ampliar os limites contratados.</p>
+              <p class="planificacao-sub">Cobertura até R$ 8.000</p>
             </div>
             <div class="planificacao-body">
               <div class="planificacao-row">

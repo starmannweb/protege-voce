@@ -9,21 +9,21 @@ const DEFAULT_PLAN_ID = 'plano2';
 const PLANS_CATALOG = {
   plano1: {
     id: 'plano1',
-    name: 'Plano 1',
+    name: 'Essencial',
     subtitle: 'Cobertura completa para seus pertences e cartões',
     price: 3.90,
     benefits: ['Até R$ 3.000 para bens e cartões', 'Cobre roubo ou furto qualificado de bens e perda, roubo ou furto de cartões', 'Até R$ 1.000 para saques e compras sob coação', 'Sem carência', 'Franquia de 15% apenas para bens']
   },
   plano2: {
     id: 'plano2',
-    name: 'Plano 2',
+    name: 'Conforto',
     subtitle: 'Cobertura completa para seus pertences e cartões',
     price: 5.90,
     benefits: ['Até R$ 5.000 para bens e cartões', 'Cobre roubo ou furto qualificado de bens e perda, roubo ou furto de cartões', 'Até R$ 2.000 para saques e compras sob coação', 'Sem carência', 'Franquia de 15% apenas para bens']
   },
   plano3: {
     id: 'plano3',
-    name: 'Plano 3',
+    name: 'Premium',
     subtitle: 'Cobertura completa para seus pertences e cartões',
     price: 9.90,
     benefits: ['Até R$ 8.000 para bens e cartões', 'Cobre roubo ou furto qualificado de bens e perda, roubo ou furto de cartões', 'Até R$ 2.000 para saques e compras sob coação', 'Sem carência', 'Franquia de 15% apenas para bens']
