@@ -255,7 +255,7 @@ section { padding: 100px 0; }
 
 /* ===== PLANO / TABELA ===== */
 .plano { background: linear-gradient(180deg, var(--branco) 0%, var(--creme) 100%); scroll-margin-top: 96px; }
-.plano-wrapper { max-width: 1080px; margin: 0 auto; }
+.plano-wrapper { width: 100%; max-width: none; margin: 0; }
 
 .planificacao-grid {
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;
@@ -306,12 +306,12 @@ section { padding: 100px 0; }
 .planificacao-row::before {
   content: '\2713'; grid-column: 1; grid-row: 1 / span 3;
   width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center;
-  color: #18B957; font-size: 0.95rem; font-weight: 900; line-height: 1; margin-top: 1px;
+  color: var(--rosa-acento); font-size: 0.95rem; font-weight: 900; line-height: 1; margin-top: 1px;
 }
 .planificacao-row > * { grid-column: 2; }
 .planificacao-row.compact { min-height: auto; }
 .planificacao-row .label {
-  font-size: 0.74rem; font-weight: 800; color: var(--azul-sura); letter-spacing: 0.06em; text-transform: uppercase;
+  font-size: 0.74rem; font-weight: 800; color: var(--rosa-acento); letter-spacing: 0.06em; text-transform: uppercase;
 }
 .planificacao-row strong { font-size: 1.02rem; color: var(--texto); line-height: 1.35; }
 .planificacao-row .valor { font-family: 'Manrope', sans-serif; font-size: 1rem; font-weight: 800; color: var(--texto); line-height: 1.35; }
