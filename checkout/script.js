@@ -1,3 +1,13 @@
+// Importa e aplica a fonte Plus Jakarta Sans no checkout
+const fontStyle = document.createElement('style');
+fontStyle.textContent = `
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+  body, button, input, select, textarea {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+  }
+`;
+document.head.appendChild(fontStyle);
+
 // Init Lucide Icons
 lucide.createIcons();
 
